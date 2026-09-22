@@ -1,0 +1,388 @@
+:root {
+    --pink: #c6537c;
+    --pink-dark: #aa3f67;
+    --dark: #352832;
+    --soft: #fff4f7;
+    --line: #eadde2;
+    --muted: #776d73;
+    --white: #fff;
+}
+
+* { box-sizing: border-box; }
+
+body {
+    margin: 0;
+    background: #fffafb;
+    color: var(--dark);
+    font: 15px Arial, sans-serif;
+    line-height: 1.65;
+}
+
+button, input, select, textarea { font: inherit; }
+
+button:disabled {
+    cursor: not-allowed;
+    opacity: 0.6;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+header {
+    background: var(--white);
+    border-bottom: 1px solid var(--line);
+    position: sticky;
+    top: 0;
+    z-index: 3;
+}
+
+.nav {
+    max-width: 1120px;
+    margin: auto;
+    min-height: 72px;
+    padding: 14px 22px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+.brand {
+    font-size: 24px;
+    font-weight: 800;
+    color: var(--pink);
+}
+
+.brand span { color: var(--dark); }
+
+nav {
+    display: flex;
+    gap: 12px;
+    flex-wrap: wrap;
+}
+
+nav button {
+    background: none;
+    border: 0;
+    padding: 9px 12px;
+    color: var(--muted);
+    cursor: pointer;
+    border-radius: 8px;
+}
+
+nav button:hover,
+nav button.active {
+    background: var(--soft);
+    color: var(--pink);
+}
+
+main {
+    max-width: 1120px;
+    margin: auto;
+    padding: 56px 28px 90px;
+}
+
+.hero {
+    background: linear-gradient(120deg, #fff1f5, #fff);
+    border-radius: 22px;
+    padding: 55px 44px;
+    margin-bottom: 30px;
+}
+
+.hero h1 {
+    max-width: 650px;
+    font-size: clamp(32px, 5vw, 54px);
+    line-height: 1.08;
+    margin: 0 0 15px;
+}
+
+.hero p {
+    font-size: 18px;
+    color: var(--muted);
+    max-width: 600px;
+}
+
+.actions {
+    display: flex;
+    gap: 16px;
+    flex-wrap: wrap;
+    margin-top: 30px;
+}
+
+.primary,
+.secondary,
+.danger {
+    border: 0;
+    border-radius: 9px;
+    padding: 12px 18px;
+    cursor: pointer;
+    font-weight: 700;
+}
+
+.primary {
+    background: var(--pink);
+    color: white;
+}
+
+.primary:hover { background: var(--pink-dark); }
+
+.secondary {
+    background: white;
+    color: var(--pink);
+    border: 1px solid var(--pink);
+}
+
+.danger {
+    background: #fcebed;
+    color: #ad385e;
+}
+
+.section-title {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    margin: 34px 0 22px;
+}
+
+.section-title h2 {
+    margin: 0;
+    font-size: 25px;
+}
+
+.muted { color: var(--muted); }
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
+    gap: 26px;
+}
+
+.card {
+    background: white;
+    border: 1px solid var(--line);
+    border-radius: 15px;
+    padding: 30px;
+    box-shadow: 0 5px 18px #5c24300b;
+}
+
+.card h3 { margin: 0 0 12px; }
+
+.tag {
+    display: inline-block;
+    background: var(--soft);
+    color: var(--pink);
+    padding: 4px 9px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: bold;
+    margin: 4px 4px 5px 0;
+}
+
+.job-meta {
+    color: var(--muted);
+    margin: 18px 0 22px;
+}
+
+.job-meta div { margin: 9px 0; }
+
+.job-card {
+    display: flex;
+    flex-direction: column;
+}
+
+.job-card .primary,
+.job-card .secondary:last-child {
+    margin-top: auto;
+}
+
+.form-card {
+    max-width: 900px;
+    background: white;
+    border: 1px solid var(--line);
+    border-radius: 16px;
+    padding: 36px;
+    margin: auto;
+}
+
+.form-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 22px;
+}
+
+.field {
+    display: flex;
+    flex-direction: column;
+    gap: 9px;
+}
+
+.field.full { grid-column: 1 / -1; }
+
+label {
+    font-weight: bold;
+    font-size: 13px;
+}
+
+input,
+select,
+textarea {
+    border: 1px solid #d9cbd1;
+    border-radius: 8px;
+    padding: 13px;
+    background: #fff;
+    color: var(--dark);
+    width: 100%;
+}
+
+textarea {
+    min-height: 100px;
+    resize: vertical;
+}
+
+.check {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.check input { width: auto; }
+
+.notice {
+    padding: 18px;
+    background: var(--soft);
+    border-radius: 10px;
+    margin: 22px 0;
+}
+
+.profile-head {
+    display: flex;
+    gap: 24px;
+    align-items: center;
+}
+
+.avatar {
+    height: 70px;
+    width: 70px;
+    border-radius: 50%;
+    background: var(--soft);
+    color: var(--pink);
+    display: grid;
+    place-items: center;
+    font-size: 25px;
+    font-weight: bold;
+    overflow: hidden;
+}
+
+.avatar img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.data {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 18px;
+    margin-top: 28px;
+}
+
+.data div {
+    padding: 16px;
+    background: #fff8fa;
+    border-radius: 8px;
+}
+
+.data strong {
+    display: block;
+    font-size: 12px;
+    color: var(--muted);
+    margin-bottom: 3px;
+}
+
+.empty {
+    text-align: center;
+    padding: 35px;
+    color: var(--muted);
+}
+
+.person-card {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+}
+
+.person-card h3 { margin: 0; }
+
+.dashboard-grid {
+    grid-template-columns: repeat(auto-fit, minmax(320px, 390px));
+    justify-content: start;
+}
+
+.dashboard-grid .job-card {
+    padding: 24px;
+}
+
+.job-actions {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 10px;
+    margin-top: auto;
+    padding-top: 14px;
+}
+
+.job-actions button {
+    padding: 10px 12px;
+}
+
+footer {
+    text-align: center;
+    color: var(--muted);
+    padding: 25px;
+    border-top: 1px solid var(--line);
+}
+
+@media (max-width: 650px) {
+    .nav {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+
+    .hero { padding: 38px 26px; }
+
+    .form-grid,
+    .data {
+        grid-template-columns: 1fr;
+    }
+
+    .field.full { grid-column: auto; }
+
+    main { padding: 34px 18px 65px; }
+
+    .card,
+    .form-card { padding: 24px; }
+
+    .grid { gap: 20px; }
+
+    .dashboard-grid {
+        grid-template-columns: 1fr;
+    }
+}
+input[type="file"] {
+    padding: 9px;
+    background: #fff8fa;
+}
+
+.profile-head .avatar {
+    flex-shrink: 0;
+}
+
+.job-filters {
+    margin: 28px 0;
+}
+
+.job-filters button {
+    min-width: 120px;
+}
